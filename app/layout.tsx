@@ -4,6 +4,7 @@ import { Header } from './header/header'
 import { cn } from '@/lib/utils'
 
 import './globals.css'
+import { ThemeProvider } from '@/components/theme-provider'
 
 const fontSans = FontSans({ subsets: ['latin'], variable: '--font-sans' })
 const fontSerif = FontSerif({ subsets: ['latin'], variable: '--font-serif' })
@@ -29,11 +30,18 @@ export default function RootLayout({ children }: RootLayoutProps) {
                     fontMono.variable
                 )}
             >
-                <div className="min-h-[100dvh] px-6 pb-16 pt-6">
-                    <Header />
+                <ThemeProvider
+                    attribute="class"
+                    defaultTheme="system"
+                    enableSystem
+                    // disableTransitionOnChange
+                >
+                    <div className="min-h-[100dvh] px-6 pb-16 pt-6">
+                        <Header />
 
-                    <main>{children}</main>
-                </div>
+                        <main>{children}</main>
+                    </div>
+                </ThemeProvider>
             </body>
         </html>
     )

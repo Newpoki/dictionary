@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import Dictionary from '@/public/dictionary.svg'
-import Moon from '@/public/moon.svg'
 import ChevronDown from '@/public/chevron-down.svg'
 import {
     DropdownMenu,
@@ -8,7 +7,7 @@ import {
     DropdownMenuItem,
     DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
-import { Switch } from '@/components/ui/switch'
+import { HeaderThemeSwitch } from './header-theme-switch'
 
 export const Header = () => {
     return (
@@ -36,9 +35,7 @@ export const Header = () => {
 
                 <div className="h-8 w-[1px] bg-grey-300" />
 
-                <Switch />
-
-                <Image src={Moon} alt="Icon showing the quarter of a moon" width={20} height={20} />
+                <HeaderThemeSwitch />
             </div>
         </header>
     )
