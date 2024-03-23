@@ -19,7 +19,7 @@ export const HeaderThemeSwitch = () => {
     )
 
     return (
-        <div className="flex items-center">
+        <div className="flex items-center gap-3">
             <Switch onCheckedChange={handleToggleThemeMode} checked={resolvedTheme === 'dark'} />
 
             <Image src={Moon} alt="Icon showing the quarter of a moon" width={20} height={20} />

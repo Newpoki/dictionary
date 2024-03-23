@@ -12,30 +12,32 @@ import { HeaderThemeSwitch } from './header-theme-switch'
 export const Header = () => {
     return (
         <header>
-            <div className="flex items-center">
+            <div className="flex items-center justify-between">
                 <Image src={Dictionary} alt="Dictionary logo" width={28} height={32} />
 
-                <DropdownMenu>
-                    <DropdownMenuTrigger className="flex items-center gap-4 px-2">
-                        <span className="text-[14px] font-bold leading-[24px]">Sans Serif</span>
+                <section className="flex items-center gap-4">
+                    <DropdownMenu>
+                        <DropdownMenuTrigger className="flex items-center gap-4 px-2">
+                            <span className="text-[14px] font-bold leading-[24px]">Sans Serif</span>
 
-                        <Image
-                            src={ChevronDown}
-                            alt="A chevron pointing down"
-                            width={12}
-                            height={6}
-                        />
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent sideOffset={18}>
-                        <DropdownMenuItem className="font-sans">Sans Serif</DropdownMenuItem>
-                        <DropdownMenuItem className="font-serif">Serif</DropdownMenuItem>
-                        <DropdownMenuItem className="font-mono">Mono</DropdownMenuItem>
-                    </DropdownMenuContent>
-                </DropdownMenu>
+                            <Image
+                                src={ChevronDown}
+                                alt="A chevron pointing down"
+                                width={12}
+                                height={6}
+                            />
+                        </DropdownMenuTrigger>
+                        <DropdownMenuContent sideOffset={18}>
+                            <DropdownMenuItem className="font-sans">Sans Serif</DropdownMenuItem>
+                            <DropdownMenuItem className="font-serif">Serif</DropdownMenuItem>
+                            <DropdownMenuItem className="font-mono">Mono</DropdownMenuItem>
+                        </DropdownMenuContent>
+                    </DropdownMenu>
 
-                <div className="h-8 w-[1px] bg-grey-300" />
+                    <div className="h-8 w-[1px] bg-grey-300" />
 
-                <HeaderThemeSwitch />
+                    <HeaderThemeSwitch />
+                </section>
             </div>
         </header>
     )
