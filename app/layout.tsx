@@ -30,12 +30,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
                     fontMono.variable
                 )}
             >
-                <ThemeProvider
-                    attribute="class"
-                    defaultTheme="system"
-                    enableSystem
-                    // disableTransitionOnChange
-                >
+                <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
                     <div className="min-h-[100dvh] px-6 pb-16 pt-6">
                         <Header />
 
