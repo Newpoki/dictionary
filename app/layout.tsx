@@ -23,15 +23,17 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <html lang="en">
             <body
                 className={cn(
-                    'min-h-[100dvh] px-6 pb-16 pt-6 font-sans antialiased',
+                    'font-sans antialiased',
                     fontSans.variable,
                     fontSerif.variable,
                     fontMono.variable
                 )}
             >
-                <Header />
+                <div className="min-h-[100dvh] px-6 pb-16 pt-6">
+                    <Header />
 
-                <main>{children}</main>
+                    <main>{children}</main>
+                </div>
             </body>
         </html>
     )
