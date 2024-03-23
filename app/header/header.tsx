@@ -8,6 +8,7 @@ import {
     DropdownMenuItem,
     DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
+import { Switch } from '@/components/ui/switch'
 
 export const Header = () => {
     return (
@@ -34,6 +35,8 @@ export const Header = () => {
                 </DropdownMenu>
 
                 <div className="h-8 w-[1px] bg-grey-300" />
+
+                <Switch />
 
                 <Image src={Moon} alt="Icon showing the quarter of a moon" width={20} height={20} />
             </div>
