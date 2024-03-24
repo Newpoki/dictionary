@@ -9,7 +9,6 @@ export const searchWord = async (state: unknown, formData: FormData) => {
     })
 
     if (result.success) {
-        console.log(result.data.query)
         redirect(`/word/${result.data.query}`)
     }
 
