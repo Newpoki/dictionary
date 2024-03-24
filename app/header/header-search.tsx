@@ -16,7 +16,6 @@ const SearchInput = ({ errors }: SearchInputProps) => {
 
     const firstError = errors?.[0]
 
-    console.log({ params })
     return (
         <Input
             disabled={pending}

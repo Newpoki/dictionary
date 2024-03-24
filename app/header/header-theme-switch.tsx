@@ -24,7 +24,7 @@ export const HeaderThemeSwitch = () => {
     }, [])
 
     return (
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3 md:gap-5">
             {mounted ? (
                 <Switch
                     onCheckedChange={handleToggleThemeMode}
