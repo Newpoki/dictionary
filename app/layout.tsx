@@ -8,6 +8,7 @@ import { ThemeProvider } from '@/components/theme-provider'
 import { cookies } from 'next/headers'
 import { getFontFamilyOrDefault } from './font-family/get-font-family-or-default'
 import { FONT_FAMILY_COOKIE_NAME } from './font-family/font-family-constants'
+import { ScrollArea } from '@/components/ui/scroll-area'
 
 const fontSans = FontSans({ subsets: ['latin'], variable: '--font-sans' })
 const fontSerif = FontSerif({ subsets: ['latin'], variable: '--font-serif' })
@@ -41,11 +42,13 @@ export default function RootLayout({ children }: RootLayoutProps) {
                 )}
             >
                 <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-                    <div className="relative flex min-h-[100dvh] flex-col p-6 pt-0 text-grey-700 dark:text-white md:px-10 md:pb-[58px] lg:mx-auto lg:w-[51dvw] lg:max-w-[1469px] lg:px-0">
-                        <Header />
+                    <ScrollArea className="h-[100dvh]">
+                        <div className="relative flex flex-col p-6 pt-0 text-grey-700 dark:text-white md:px-10 md:pb-[58px] lg:mx-auto lg:w-[51dvw] lg:max-w-[1469px] lg:px-0">
+                            <Header />
 
-                        <main className="flex flex-1 flex-col">{children}</main>
-                    </div>
+                            <main className="flex flex-1 flex-col">{children}</main>
+                        </div>
+                    </ScrollArea>
                 </ThemeProvider>
             </body>
         </html>
