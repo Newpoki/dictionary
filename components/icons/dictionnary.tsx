@@ -8,15 +8,15 @@ export const Dictionary = (props: React.SVGProps<SVGSVGElement>) => {
             <path
                 d="M4.50685 32.5616C3.57675 32.5616 2.6848 32.1921 2.02713 31.5344C1.36947 30.8768 1 29.9848 1 29.0547C1 28.1246 1.36947 27.2326 2.02713 26.575C2.6848 25.9173 3.57675 25.5479 4.50685 25.5479"
                 stroke="currentColor"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
             />
             <path
                 d="M9.76709 8.0138H20.2876"
                 stroke="currentColor"
-                stroke-width="1.5"
-                stroke-linecap="round"
+                strokeWidth="1.5"
+                strokeLinecap="round"
             />
         </svg>
     )
