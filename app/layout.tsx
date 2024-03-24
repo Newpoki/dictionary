@@ -31,10 +31,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
                 )}
             >
                 <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-                    <div className="min-h-[100dvh] bg-white px-6 pb-16 pt-6 dark:bg-grey-900">
+                    <div className="flex min-h-[100dvh] flex-col bg-white p-6 text-grey-700 dark:bg-grey-900 dark:text-white">
                         <Header />
 
-                        <main>{children}</main>
+                        <main className="flex flex-1 flex-col">{children}</main>
                     </div>
                 </ThemeProvider>
             </body>
