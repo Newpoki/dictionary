@@ -11,6 +11,13 @@ type Props = {
     }
 }
 
+export function generateMetadata({ params }: Props) {
+    return {
+        title: `Dictionary : ${params.query}`,
+        description: `${params.query} definition`,
+    }
+}
+
 const fetchWordData = async (word: string) => {
     const res = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
 
