@@ -21,10 +21,12 @@ export const Header = () => {
                     <Dictionary className="text-grey-500" width={28} height={32} />
                 </Link>
 
-                <section className="flex items-center gap-4">
+                <section className="flex items-center gap-4 md:gap-[26px]">
                     <DropdownMenu>
-                        <DropdownMenuTrigger className="flex items-center gap-4 px-2">
-                            <span className="text-[14px] font-bold leading-[24px]">Sans Serif</span>
+                        <DropdownMenuTrigger className="flex items-center gap-4 px-2 md:gap-[18px]">
+                            <span className="text-[14px] font-bold leading-[24px] md:text-[18px]">
+                                Sans Serif
+                            </span>
 
                             <ChevronDown className="text-purple-500" width={12} height={6} />
                         </DropdownMenuTrigger>
