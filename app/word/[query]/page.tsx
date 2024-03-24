@@ -7,7 +7,7 @@ import { External } from '@/components/icons/external'
 
 type Props = {
     params: {
-        slug: string
+        query: string
     }
 }
 
@@ -35,7 +35,7 @@ const fetchWordData = async (word: string) => {
 }
 
 export default async function Page({ params }: Props) {
-    const wordData = await fetchWordData(params.slug)
+    const wordData = await fetchWordData(params.query)
 
     const hasSources = wordData.sourceUrls.length > 0
 
