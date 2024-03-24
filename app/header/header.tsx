@@ -14,6 +14,7 @@ export const Header = () => {
             <div className="flex items-center justify-between">
                 <Link
                     href="/"
+                    aria-label="Link to the home page"
                     className="dark:focus-ring-purple-500 rounded-sm outline-none focus:ring-1 focus:ring-purple-500 focus:ring-offset-4 dark:focus:ring-offset-grey-900"
                 >
                     <Dictionary className="h-8 w-7 text-grey-500 md:h-9 md:w-8" />

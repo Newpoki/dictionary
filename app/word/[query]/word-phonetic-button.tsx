@@ -39,6 +39,7 @@ export const WordPhoneticButton = ({ audioUrl }: WordPhoneticButtonProps) => {
                 className="group flex h-12 w-12 items-center justify-center rounded-full bg-purple-500/25 transition-colors hover:bg-purple-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-500 md:h-[75px] md:w-[75px]"
                 type="button"
                 onClick={handleToggleIsPlaying}
+                aria-label="Click to listen how the word is pronounced"
             >
                 {isPlaying ? (
                     <Pause className="h-7 w-7 text-purple-500 transition-colors group-hover:text-white md:h-9 md:w-9" />

@@ -29,6 +29,7 @@ export const HeaderThemeSwitch = () => {
                 <Switch
                     onCheckedChange={handleToggleThemeMode}
                     checked={resolvedTheme === 'dark'}
+                    aria-label="Switch to toggle theme"
                 />
             ) : (
                 <Skeleton className="h-5 w-10 rounded-full" />
