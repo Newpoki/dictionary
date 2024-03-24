@@ -1,10 +1,9 @@
 'use client'
 
+import { Moon } from '@/components/icons/moon'
 import { Skeleton } from '@/components/ui/skeleton'
 import { Switch } from '@/components/ui/switch'
-import Moon from '@/public/moon.svg'
 import { useTheme } from 'next-themes'
-import Image from 'next/image'
 import { useCallback, useEffect, useState } from 'react'
 
 export const HeaderThemeSwitch = () => {
@@ -35,7 +34,8 @@ export const HeaderThemeSwitch = () => {
                 <Skeleton className="h-5 w-10 rounded-full" />
             )}
 
-            <Image src={Moon} alt="Icon showing the quarter of a moon" width={20} height={20} />
+            {/* <Image src={Moon} alt="Icon showing the quarter of a moon" width={20} height={20} /> */}
+            <Moon width={20} height={20} className="text-grey-500 dark:text-purple-500" />
         </div>
     )
 }
