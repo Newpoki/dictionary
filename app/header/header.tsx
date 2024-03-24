@@ -10,7 +10,7 @@ export const Header = () => {
     const cookiesStore = cookies()
 
     return (
-        <header className="sticky top-0 z-10 flex flex-col gap-6 bg-white pb-6 pt-6 dark:bg-grey-900 md:gap-[51.5px] md:pb-11 md:pt-[58px]">
+        <header className="sticky -top-16 z-10 flex flex-col gap-6 bg-white pb-6 pt-6 dark:bg-grey-900 md:-top-32 md:gap-[51.5px] md:pb-11 md:pt-[58px] lg:-top-28">
             <div className="flex items-center justify-between">
                 <Link
                     href="/"
