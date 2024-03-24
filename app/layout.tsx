@@ -41,7 +41,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
                 )}
             >
                 <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-                    <div className="flex min-h-[100dvh] flex-col  p-6 text-grey-700 dark:text-white md:px-10 md:py-[58px] lg:mx-auto lg:w-[51dvw] lg:max-w-[1469px] lg:px-0">
+                    <div className="relative flex min-h-[100dvh] flex-col p-6 pt-0 text-grey-700 dark:text-white md:px-10 md:pb-[58px] lg:mx-auto lg:w-[51dvw] lg:max-w-[1469px] lg:px-0">
                         <Header />
 
                         <main className="flex flex-1 flex-col">{children}</main>

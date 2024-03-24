@@ -49,7 +49,7 @@ export default async function Page({ params }: Props) {
     const phonetic = wordData.phonetic
 
     return (
-        <article className="flex flex-col pt-6 md:pt-11">
+        <article className="flex flex-col">
             <section className="flex items-center justify-between">
                 <div className="flex flex-col gap-2">
                     <h1 className="text-[32px] font-bold md:text-h-l">{wordData.word}</h1>
