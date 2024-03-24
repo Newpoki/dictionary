@@ -16,7 +16,7 @@ export const Header = () => {
                     href="/"
                     className="dark:focus-ring-purple-500 rounded-sm outline-none focus:ring-1 focus:ring-purple-500 focus:ring-offset-4 dark:focus:ring-offset-grey-900"
                 >
-                    <Dictionary className="text-grey-500" width={28} height={32} />
+                    <Dictionary className="h-8 w-7 text-grey-500 md:h-9 md:w-8" />
                 </Link>
 
                 <section className="flex items-center gap-4 md:gap-[26px]">
