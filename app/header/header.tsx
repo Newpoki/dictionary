@@ -7,10 +7,11 @@ import {
 import { HeaderThemeSwitch } from './header-theme-switch'
 import { ChevronDown } from '@/components/icons/chevron-down'
 import { Dictionary } from '@/components/icons/dictionnary'
+import { HeaderSearch } from './header-search'
 
 export const Header = () => {
     return (
-        <header>
+        <header className="flex flex-col gap-6 md:gap-[51.5px]">
             <div className="flex items-center justify-between">
                 <Dictionary className="text-grey-500" width={28} height={32} />
 
@@ -33,6 +34,8 @@ export const Header = () => {
                     <HeaderThemeSwitch />
                 </section>
             </div>
+
+            <HeaderSearch />
         </header>
     )
 }
