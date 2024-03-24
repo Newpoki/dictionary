@@ -14,6 +14,7 @@ const wordPhoneticSchema = z.object({
 
 const wordMeaningDefinitionSchema = z.object({
     definition: z.string(),
+    example: z.string().optional(),
     synonyms: z.array(z.string()),
     antonyms: z.array(z.string()),
 })

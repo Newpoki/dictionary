@@ -24,14 +24,14 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <html lang="en">
             <body
                 className={cn(
-                    'font-sans antialiased',
+                    'bg-white font-sans antialiased dark:bg-grey-900',
                     fontSans.variable,
                     fontSerif.variable,
                     fontMono.variable
                 )}
             >
                 <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-                    <div className="flex min-h-[100dvh] flex-col bg-white p-6 text-grey-700 dark:bg-grey-900 dark:text-white md:px-10 md:py-[58px] lg:mx-auto lg:w-[51dvw] lg:max-w-[1469px] lg:px-0">
+                    <div className="flex min-h-[100dvh] flex-col  p-6 text-grey-700 dark:text-white md:px-10 md:py-[58px] lg:mx-auto lg:w-[51dvw] lg:max-w-[1469px] lg:px-0">
                         <Header />
 
                         <main className="flex flex-1 flex-col">{children}</main>

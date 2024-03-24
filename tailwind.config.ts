@@ -48,28 +48,28 @@ const config = {
             'b-s': [
                 '14px',
                 {
-                    fontWeight: 500,
+                    fontWeight: 400,
                     lineHeight: '17px',
                 },
             ],
             'b-m': [
                 '18px',
                 {
-                    fontWeight: 500,
+                    fontWeight: 400,
                     lineHeight: '24px',
                 },
             ],
             'h-s': [
                 '20px',
                 {
-                    fontWeight: 500,
+                    fontWeight: 400,
                     lineHeight: '24px',
                 },
             ],
             'h-m': [
                 '24px',
                 {
-                    fontWeight: 500,
+                    fontWeight: 400,
                     lineHeight: '29px',
                 },
             ],
