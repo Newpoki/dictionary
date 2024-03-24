@@ -12,7 +12,7 @@ export const searchWord = async (state: unknown, formData: FormData) => {
     })
 
     if (result.success) {
-        redirect(`/word/${result.data.query}`)
+        redirect(`/word/${result.data.query.toLocaleLowerCase()}`)
     }
 
     return { error: result.error.format() }

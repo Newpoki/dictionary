@@ -18,6 +18,7 @@ const SearchInput = ({ errors }: SearchInputProps) => {
 
     return (
         <Input
+            className="lowercase"
             disabled={pending}
             error={firstError}
             defaultValue={params.query}
