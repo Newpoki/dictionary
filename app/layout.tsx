@@ -10,9 +10,22 @@ import { getFontFamilyOrDefault } from './font-family/get-font-family-or-default
 import { FONT_FAMILY_COOKIE_NAME } from './font-family/font-family-constants'
 import { ScrollArea } from '@/components/ui/scroll-area'
 
-const fontSans = FontSans({ subsets: ['latin'], variable: '--font-sans' })
-const fontSerif = FontSerif({ subsets: ['latin'], variable: '--font-serif' })
-const fontMono = FontMono({ subsets: ['latin'], variable: '--font-mono' })
+const fontSans = FontSans({
+    subsets: ['latin'],
+    variable: '--font-sans',
+    weight: ['400', '700'],
+})
+const fontSerif = FontSerif({
+    subsets: ['latin'],
+    variable: '--font-serif',
+    weight: ['400', '700'],
+})
+const fontMono = FontMono({
+    subsets: ['latin'],
+    variable: '--font-mono',
+    weight: ['400', '700'],
+    style: 'normal',
+})
 
 export const metadata: Metadata = {
     title: 'Dictionary',

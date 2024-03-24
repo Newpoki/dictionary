@@ -1,6 +1,10 @@
 import { z } from 'zod'
 import { wordSchema } from './word-schemas'
 import Link from 'next/link'
+import { getFontFamilyOrDefault } from '@/app/font-family/get-font-family-or-default'
+import { cookies } from 'next/headers'
+import { FONT_FAMILY_COOKIE_NAME } from '@/app/font-family/font-family-constants'
+import { cn } from '@/lib/utils'
 
 type WordMeaningProps = {
     meaning: z.infer<typeof wordSchema.shape.meanings>[number]
@@ -9,10 +13,16 @@ type WordMeaningProps = {
 export const WordMeaning = ({ meaning }: WordMeaningProps) => {
     const hasSynonyms = meaning.synonyms.length > 0
 
+    const fontFamily = getFontFamilyOrDefault(cookies().get(FONT_FAMILY_COOKIE_NAME)?.value)
+
     return (
         <li>
             <div className="mb-8 flex items-center gap-4 md:mb-8 md:gap-5">
-                <h3 className="text-[18px] font-bold italic md:text-[24px]">
+                <h3
+                    className={cn('text-[18px] font-bold md:text-[24px]', {
+                        italic: fontFamily === 'sans',
+                    })}
+                >
                     {meaning.partOfSpeech}
                 </h3>
                 <hr className="h-[1px] w-full border-none bg-grey-300" />
