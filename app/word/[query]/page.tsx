@@ -39,19 +39,21 @@ export default async function Page({ params }: Props) {
 
     const hasSources = wordData.sourceUrls.length > 0
 
+    const phonetic = wordData.phonetic
+
     return (
         <article className="flex flex-col pt-6 md:pt-11">
             <section className="flex items-center justify-between">
                 <div className="flex flex-col gap-2">
                     <h1 className="text-[32px] font-bold md:text-h-l">{wordData.word}</h1>
-                    {wordData.phonetic && (
-                        <h2 className="text-body-m text-purple-500 md:text-h-m">
-                            {wordData.phonetic.text}
-                        </h2>
+                    {phonetic && (
+                        <h2 className="text-body-m text-purple-500 md:text-h-m">{phonetic.text}</h2>
                     )}
                 </div>
 
-                {wordData.phonetic?.audio !== '' && <WordPhoneticButton />}
+                {phonetic != null && phonetic.audio !== '' && (
+                    <WordPhoneticButton audioUrl={phonetic.audio} />
+                )}
             </section>
 
             <section

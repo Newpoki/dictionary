@@ -4,7 +4,11 @@ import { PlayArrow } from '@/components/icons/play-arrow'
 import { Pause } from '@/components/icons/pause'
 import { useCallback, useEffect, useRef, useState } from 'react'
 
-export const WordPhoneticButton = () => {
+type WordPhoneticButtonProps = {
+    audioUrl: string
+}
+
+export const WordPhoneticButton = ({ audioUrl }: WordPhoneticButtonProps) => {
     const [isPlaying, setIsPlaying] = useState(false)
 
     const inputRef = useRef<HTMLAudioElement>(null)
@@ -29,10 +33,7 @@ export const WordPhoneticButton = () => {
 
     return (
         <>
-            <audio
-                ref={inputRef}
-                src="https://api.dictionaryapi.dev/media/pronunciations/en/keyboard-us.mp3"
-            />
+            <audio ref={inputRef} src={audioUrl} />
 
             <button
                 className="group flex h-12 w-12 items-center justify-center rounded-full bg-purple-500/25 transition-colors hover:bg-purple-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-500 md:h-[75px] md:w-[75px]"
