@@ -13,7 +13,7 @@ type Props = {
 
 export function generateMetadata({ params }: Props) {
     return {
-        title: `Dictionary : ${params.query}`,
+        title: `Dictionary : ${decodeURIComponent(params.query)}`,
         description: `${params.query} definition`,
     }
 }

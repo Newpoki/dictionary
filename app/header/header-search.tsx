@@ -12,13 +12,17 @@ type SearchInputProps = {
     errors?: Array<string>
 }
 
+const getDecodedQuery = (query: unknown) => {
+    const parsedValue = z.string().safeParse(query)
+
+    return parsedValue.success ? decodeURIComponent(parsedValue.data) : ''
+}
+
 const SearchInput = ({ errors }: SearchInputProps) => {
     const { pending } = useFormStatus()
     const params = useParams()
     const [query, setQuery] = useState(() => {
-        const parsedValue = z.string().safeParse(params.query)
-
-        return parsedValue.success ? decodeURIComponent(parsedValue.data) : ''
+        return getDecodedQuery(params.query)
     })
 
     const firstError = errors?.[0]
@@ -29,9 +33,7 @@ const SearchInput = ({ errors }: SearchInputProps) => {
 
     // As value can also change elsewhere, we need to update local state accordingly
     useEffect(() => {
-        const parsedValue = z.string().safeParse(params.query)
-
-        setQuery(parsedValue.success ? decodeURIComponent(parsedValue.data) : '')
+        setQuery(getDecodedQuery(params.query))
     }, [params.query])
 
     return (
