@@ -34,13 +34,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
                     {endAdornment != null && <div>{endAdornment}</div>}
                 </label>
 
-                <span
-                    className={cn('text-red-500 opacity-0', {
-                        'opacity-100': hasError,
-                    })}
-                >
-                    {error ?? '\u00A0'}
-                </span>
+                {error != null && <span className="text-red-500">{error}</span>}
             </div>
         )
     }
