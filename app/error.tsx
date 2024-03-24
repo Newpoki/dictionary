@@ -3,12 +3,7 @@
 import confusedEmoji from '@/public/confused-emoji.png'
 import Image from 'next/image'
 
-type Props = {
-    error: Error & { diggest?: string }
-    reset: () => void
-}
-
-export default function Error({ error, reset }: Props) {
+export default function Error() {
     return (
         <div className="flex flex-1 flex-col items-center justify-center text-center">
             <Image
