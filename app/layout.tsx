@@ -5,6 +5,9 @@ import { cn } from '@/lib/utils'
 
 import './globals.css'
 import { ThemeProvider } from '@/components/theme-provider'
+import { cookies } from 'next/headers'
+import { getFontFamilyOrDefault } from './font-family/get-font-family-or-default'
+import { FONT_FAMILY_COOKIE_NAME } from './font-family/font-family-constants'
 
 const fontSans = FontSans({ subsets: ['latin'], variable: '--font-sans' })
 const fontSerif = FontSerif({ subsets: ['latin'], variable: '--font-serif' })
@@ -20,14 +23,21 @@ type RootLayoutProps = {
 }
 
 export default function RootLayout({ children }: RootLayoutProps) {
+    const fontFamily = getFontFamilyOrDefault(cookies().get(FONT_FAMILY_COOKIE_NAME)?.value)
+
     return (
         <html lang="en">
             <body
                 className={cn(
-                    'bg-white font-sans antialiased dark:bg-grey-900',
+                    'bg-white antialiased dark:bg-grey-900',
                     fontSans.variable,
                     fontSerif.variable,
-                    fontMono.variable
+                    fontMono.variable,
+                    {
+                        'font-sans': fontFamily === 'sans',
+                        'font-serif': fontFamily === 'serif',
+                        'font-mono': fontFamily === 'mono',
+                    }
                 )}
             >
                 <ThemeProvider attribute="class" defaultTheme="system" enableSystem>

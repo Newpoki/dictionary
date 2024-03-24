@@ -1,0 +1,1 @@
+export const FONT_FAMILY_COOKIE_NAME = 'FONT_FAMILY_COOKIE_NAME' as const

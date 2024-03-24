@@ -1,16 +1,14 @@
-import {
-    DropdownMenu,
-    DropdownMenuContent,
-    DropdownMenuItem,
-    DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu'
 import { HeaderThemeSwitch } from './header-theme-switch'
-import { ChevronDown } from '@/components/icons/chevron-down'
 import { Dictionary } from '@/components/icons/dictionnary'
 import { HeaderSearch } from './header-search'
 import Link from 'next/link'
+import { HeaderFont } from './header-font'
+import { cookies } from 'next/headers'
+import { FONT_FAMILY_COOKIE_NAME } from '../font-family/font-family-constants'
 
 export const Header = () => {
+    const cookiesStore = cookies()
+
     return (
         <header className="flex flex-col gap-6 md:gap-[51.5px]">
             <div className="flex items-center justify-between">
@@ -22,20 +20,7 @@ export const Header = () => {
                 </Link>
 
                 <section className="flex items-center gap-4 md:gap-[26px]">
-                    <DropdownMenu>
-                        <DropdownMenuTrigger className="flex items-center gap-4 px-2 md:gap-[18px]">
-                            <span className="text-[14px] font-bold leading-[24px] md:text-[18px]">
-                                Sans Serif
-                            </span>
-
-                            <ChevronDown className="text-purple-500" width={12} height={6} />
-                        </DropdownMenuTrigger>
-                        <DropdownMenuContent sideOffset={18}>
-                            <DropdownMenuItem className="font-sans">Sans Serif</DropdownMenuItem>
-                            <DropdownMenuItem className="font-serif">Serif</DropdownMenuItem>
-                            <DropdownMenuItem className="font-mono">Mono</DropdownMenuItem>
-                        </DropdownMenuContent>
-                    </DropdownMenu>
+                    <HeaderFont fontFamilyCookie={cookiesStore.get(FONT_FAMILY_COOKIE_NAME)} />
 
                     <div className="h-8 w-[1px] bg-grey-300" />
 
