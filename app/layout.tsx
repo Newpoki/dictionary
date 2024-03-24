@@ -31,7 +31,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
                 )}
             >
                 <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-                    <div className="min-h-[100dvh] px-6 pb-16 pt-6">
+                    <div className="min-h-[100dvh] bg-white px-6 pb-16 pt-6 dark:bg-grey-900">
                         <Header />
 
                         <main>{children}</main>
