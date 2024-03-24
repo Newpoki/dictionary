@@ -6,5 +6,5 @@ export const getFontFamilyOrDefault = (
 ): z.infer<typeof fontFamilySchema> => {
     const parsedValue = fontFamilySchema.safeParse(value)
 
-    return parsedValue.success ? parsedValue.data : 'sans'
+    return parsedValue.success ? parsedValue.data : 'serif'
 }
